@@ -1,0 +1,13 @@
+<div *ngFor="let message of messages">
+  <div class="card mt-3">
+    <div class="card-body">
+      <div class="card-title">
+        <h3>{{message.user}}</h3> <p>{{message.date}}</p>
+        <hr>
+      </div>
+      <div class="card-body">
+        {{message.text}}
+      </div>
+    </div>
+  </div>
+</div>

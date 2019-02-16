@@ -1,0 +1,35 @@
+<div class="card mt-3">
+  <div class="card-body">
+    <form [formGroup]="angForm"  (ngSubmit)="onSubmit()" novalidate>
+      <div class="form-group">
+        <label class="col-md-4">Username </label>
+        <input type="text" class="form-control" formControlName="user" #user />
+      </div>
+      <div *ngIf="angForm.controls['user'].invalid && (angForm.controls['user'].dirty || angForm.controls['user'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['user'].errors.required">
+          Username is required!
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Message </label>
+        <input type="text" class="form-control" formControlName="text" #text />
+      </div>
+      <div *ngIf="angForm.controls['text'].invalid && (angForm.controls['text'].dirty || angForm.controls['text'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['text'].errors.required">
+          Password is required!
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="submit"
+        [disabled]="angForm.pristine || angForm.invalid"
+        class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="alert alert-success mt-3" role="alert" *ngIf="postStatus ==200">
+  Your message has been posted!
+</div>
+<div class="alert alert-danger mt-3" role="alert" *ngIf="postStatus ==401">
+  Something went wrong, are you logged in?
+</div>
