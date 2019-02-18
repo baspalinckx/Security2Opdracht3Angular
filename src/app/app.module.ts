@@ -13,6 +13,8 @@ import { HttpModule } from '@angular/http';
 
 import { MessageService } from './message.service';
 import { AuthService } from './auth.service';
+import { SanitizeHtmlPipe } from './sanitizer.pipe';
+
 
 
 
@@ -22,7 +24,8 @@ import { AuthService } from './auth.service';
     AppComponent,
     GstAddComponent,
     GstGetComponent,
-    GstEditComponent
+    GstEditComponent,
+    SanitizeHtmlPipe
   ],
   imports: [
     BrowserModule,

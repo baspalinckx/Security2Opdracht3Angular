@@ -6,7 +6,8 @@
         <hr>
       </div>
       <div class="card-body">
-        {{message.text}}
+        <div [innerHtml]="message.text | sanitizeHtml">
+        </div>
       </div>
     </div>
   </div>
